@@ -60,13 +60,11 @@
     <script>
       // This script will update the browser's URL and redirect to the new page without the .html extension
       function changeUrlAndRedirect(url) {
-          // Remove the .html extension from the URL
-          url = url.replace('.html', '');
-          window.history.pushState({}, '', url);
+          // Remove any occurrences of ".html" in the URL
+          url = url.replace(/\.html$/, '');
           window.location.href = url; // Redirect to the new URL
       }
       </script>
-      
 </head>
 
 <body id="top">
@@ -111,7 +109,8 @@
           </li>
 
           <li>
-            <a href="Gallery/gallery.html" class="navbar-link" data-nav-link>Portfolio</a>
+             <a href="javascript:void(0);" onclick="changeUrlAndRedirect('Gallery/gallery.html');" class="navbar-link" data-nav-link>Portfolio</a>
+
 <!--             <a href="javascript:void(0);" onclick="changeUrlAndRedirect('/gallery.html');" class="navbar-link" data-nav-link>Portfolio</a> -->
           </li>
 
