@@ -58,8 +58,10 @@
 
     
     <script>
-      // This script will update the browser's URL and redirect to the new page
+      // This script will update the browser's URL and redirect to the new page without the .html extension
       function changeUrlAndRedirect(url) {
+          // Remove the .html extension from the URL
+          url = url.replace('.html', '');
           window.history.pushState({}, '', url);
           window.location.href = url; // Redirect to the new URL
       }
@@ -117,7 +119,8 @@
       </nav>
 
 <!--       <a href="booking.html" class="btn btn-secondary">Book Now</a> -->
-            <a href="javascript:void(0);" onclick="changeUrlAndRedirect('booking.html');" class="btn btn-secondary">Book Now</a>
+             <a href="javascript:void(0);" onclick="changeUrlAndRedirect('booking.html');" class="btn btn-secondary">Book Now</a>
+
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line"></span>
