@@ -57,7 +57,14 @@
   <link rel="preload" href="Images/corporate4.png" as="photography home page image 3">
 
     
-
+    <script>
+      // This script will update the browser's URL and redirect to the new page
+      function changeUrlAndRedirect(url) {
+          window.history.pushState({}, '', url);
+          window.location.href = url; // Redirect to the new URL
+      }
+      </script>
+      
 </head>
 
 <body id="top">
@@ -109,7 +116,8 @@
 
       </nav>
 
-      <a href="booking.html" class="btn btn-secondary">Book Now</a>
+<!--       <a href="booking.html" class="btn btn-secondary">Book Now</a> -->
+            <a href="javascript:void(0);" onclick="changeUrlAndRedirect('booking.html');" class="btn btn-secondary">Book Now</a>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line"></span>
